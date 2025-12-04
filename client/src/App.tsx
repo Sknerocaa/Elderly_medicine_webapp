@@ -1,28 +1,35 @@
 import { Switch, Route } from "wouter";
-import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { Layout } from "@/components/layout/Layout";
+import Home from "@/pages/Home";
+import DoctorBooking from "@/pages/DoctorBooking";
+import MedicineOrdering from "@/pages/MedicineOrdering";
+import HealthTips from "@/pages/HealthTips";
+import AIHelper from "@/pages/AIHelper";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
-    <Switch>
-      {/* Add pages below */}
-      {/* <Route path="/" component={Home}/> */}
-      {/* Fallback to 404 */}
-      <Route component={NotFound} />
-    </Switch>
+    <Layout>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/doctor" component={DoctorBooking} />
+        <Route path="/medicine" component={MedicineOrdering} />
+        <Route path="/tips" component={HealthTips} />
+        <Route path="/ai-helper" component={AIHelper} />
+        <Route component={NotFound} />
+      </Switch>
+    </Layout>
   );
 }
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Router />
-      </TooltipProvider>
+      <Router />
+      <Toaster />
     </QueryClientProvider>
   );
 }
