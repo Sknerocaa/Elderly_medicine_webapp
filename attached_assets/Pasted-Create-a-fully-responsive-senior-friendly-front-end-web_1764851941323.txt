@@ -1,0 +1,65 @@
+Create a fully responsive, senior-friendly front-end website called 
+“Senior Healthcare Helpdesk – India”.
+
+The website should help senior citizens who struggle with online healthcare 
+by giving them a simple interface with large buttons, big text, and 
+easy navigation.
+
+FEATURES TO INCLUDE:
+1. A clean, minimal homepage with the title 
+   “Senior Healthcare Helpdesk – India”.
+
+2. Four big buttons (large size, high contrast):
+   - Book Doctor Appointment
+   - Order Medicines
+   - View Health Tips
+   - Talk to AI Helper
+
+3. Add an AI Helper Chatbox section:
+   - A textbox for input
+   - A “Send” button
+   - Display area for chat messages
+   - The AI does NOT need real backend. 
+     Simulate responses like:
+     “Sure, I can help you with that.” or 
+     “Click the ‘Book Doctor Appointment’ button to proceed.”
+
+4. All pages should be simple HTML/CSS/JS only. 
+   No backend required.
+
+5. Design Requirements:
+   - Use very large fonts for seniors
+   - Use clear icons (doctor, medicine, chat, tips)
+   - High contrast colors (eg: blue, white, black)
+   - Buttons must be easy to click with rounded corners
+   - Mobile-friendly and senior-friendly UI
+
+6. Pages to Create:
+   - Home Page (main navigation + buttons)
+   - Doctor Booking Page (simple form: name, age, city, doctor type)
+   - Medicine Ordering Page (simple form: medicine name + quantity)
+   - Health Tips Page (list 10 simple tips for seniors)
+   - AI Helper Chat Page (simulated chatbot)
+
+7. Internal Navigation:
+   - All pages should have a top navigation bar with large text:
+     Home | Book Doctor | Order Medicine | Health Tips | AI Helper
+
+8. Use simple JavaScript:
+   - Form validations
+   - Alert popups saying:
+     “Your appointment request has been submitted”
+     “Your medicine order has been placed”
+   - Simulated AI replies with setTimeout()
+
+9. Make the entire site easy, friendly, and visually calm.
+
+10. Deliverables:
+    - index.html
+    - style.css
+    - script.js
+    - Separate sections or divs for each page (SPA style is okay)
+
+Make the UI extremely simple for senior citizens in India.
+Use Indian context examples: 
+cities, common medicines, local doctor types, etc.
