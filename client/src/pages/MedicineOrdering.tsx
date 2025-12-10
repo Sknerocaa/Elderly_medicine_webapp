@@ -1,21 +1,51 @@
 import { useForm } from "react-hook-form";
 import { useToast } from "@/hooks/use-toast";
 import { Pill } from "lucide-react";
+import { useMutation } from "@tanstack/react-query";
+import type { InsertMedicineOrder } from "@shared/schema";
 
 export default function MedicineOrdering() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const { toast } = useToast();
 
-  const onSubmit = (data: any) => {
-    setTimeout(() => {
-      alert(`Your medicine order has been placed!\n\nDetails:\nMedicine: ${data.medicine}\nQuantity: ${data.quantity}`);
+  const createOrder = useMutation({
+    mutationFn: async (data: InsertMedicineOrder) => {
+      const response = await fetch("/api/medicine-orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      
+      if (!response.ok) {
+        throw new Error("Failed to place order");
+      }
+      
+      return response.json();
+    },
+    onSuccess: () => {
       toast({
-        title: "Order Placed Successfully",
+        title: "Order Placed Successfully ✅",
         description: "Your medicines will be delivered shortly.",
         duration: 5000,
       });
       reset();
-    }, 800);
+    },
+    onError: () => {
+      toast({
+        title: "Order Failed",
+        description: "Please try again or contact support.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    },
+  });
+
+  const onSubmit = (data: any) => {
+    createOrder.mutate({
+      medicine: data.medicine,
+      quantity: parseInt(data.quantity),
+      address: data.address,
+    });
   };
 
   return (
@@ -40,6 +70,7 @@ export default function MedicineOrdering() {
                 {...register("medicine", { required: "Please enter medicine name" })}
                 className="w-full p-4 text-xl border-2 border-slate-300 rounded-xl focus:border-emerald-600 focus:ring-4 focus:ring-emerald-100 transition-all"
                 placeholder="Ex: Paracetamol, Sugar Tablet"
+                data-testid="input-medicine"
               />
               {errors.medicine && <p className="text-red-600 text-lg font-medium">⚠ {String(errors.medicine.message)}</p>}
             </div>
@@ -53,6 +84,7 @@ export default function MedicineOrdering() {
                   className="w-32 p-4 text-xl border-2 border-slate-300 rounded-xl focus:border-emerald-600 focus:ring-4 focus:ring-emerald-100 transition-all text-center"
                   placeholder="1"
                   defaultValue="1"
+                  data-testid="input-quantity"
                 />
                 <span className="text-lg text-slate-500">Packets / Strips</span>
               </div>
@@ -65,15 +97,18 @@ export default function MedicineOrdering() {
                 {...register("address", { required: "Please enter address" })}
                 className="w-full p-4 text-xl border-2 border-slate-300 rounded-xl focus:border-emerald-600 focus:ring-4 focus:ring-emerald-100 transition-all min-h-[120px]"
                 placeholder="Enter your full home address here..."
+                data-testid="textarea-address"
               />
               {errors.address && <p className="text-red-600 text-lg font-medium">⚠ {String(errors.address.message)}</p>}
             </div>
 
             <button 
               type="submit"
-              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-2xl font-bold py-6 rounded-xl shadow-lg hover:shadow-xl transform transition hover:-translate-y-1 mt-4"
+              disabled={createOrder.isPending}
+              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white text-2xl font-bold py-6 rounded-xl shadow-lg hover:shadow-xl transform transition hover:-translate-y-1 mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
+              data-testid="button-submit-order"
             >
-              Place Order
+              {createOrder.isPending ? "Placing Order..." : "Place Order"}
             </button>
 
           </form>
