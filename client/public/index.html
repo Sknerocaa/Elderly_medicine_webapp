@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Senior Healthcare Helpdesk – India</title>
+  <meta name="description" content="Simple, safe healthcare assistance for senior citizens in India">
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#doctor">Book Doctor</a></li>
+      <li><a href="#medicine">Order Medicine</a></li>
+      <li><a href="#tips">Health Tips</a></li>
+      <li><a href="#ai">AI Helper</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    
+    <!-- HOME PAGE -->
+    <section id="home">
+      <div class="hero">
+        <h1>Senior Healthcare Helpdesk – India</h1>
+        <p class="subtitle">Simple, safe, and easy healthcare assistance for you.</p>
+        
+        <div class="button-grid">
+          <a href="#doctor" class="big-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+            </svg>
+            <span>Book Doctor Appointment</span>
+          </a>
+
+          <a href="#medicine" class="big-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+            <span>Order Medicines</span>
+          </a>
+
+          <a href="#tips" class="big-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+            <span>View Health Tips</span>
+          </a>
+
+          <a href="#ai" class="big-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+            <span>Talk to AI Helper</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCTOR BOOKING PAGE -->
+    <section id="doctor">
+      <div class="page-header blue">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+        </svg>
+        <div>
+          <h2>Book Doctor Appointment</h2>
+          <p>Fill in your details below</p>
+        </div>
+      </div>
+      
+      <form class="form-card" action="#doctor-success" method="get">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" placeholder="e.g. 65" required min="1">
+          </div>
+          
+          <div class="form-group">
+            <label for="city">City</label>
+            <select id="city" name="city" required>
+              <option value="">Select your city</option>
+              <option>Mumbai</option>
+              <option>Delhi</option>
+              <option>Bangalore</option>
+              <option>Chennai</option>
+              <option>Kolkata</option>
+              <option>Pune</option>
+              <option>Hyderabad</option>
+              <option>Ahmedabad</option>
+              <option>Jaipur</option>
+              <option>Lucknow</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="doc-type">Doctor Type</label>
+          <select id="doc-type" name="doc-type" required>
+            <option value="">Select Specialist</option>
+            <option>General Physician</option>
+            <option>Cardiologist (Heart)</option>
+            <option>Orthopedic (Bones)</option>
+            <option>Eye Specialist</option>
+            <option>Dentist</option>
+            <option>ENT Specialist</option>
+            <option>Dermatologist (Skin)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="submit-btn blue">Submit Appointment Request</button>
+      </form>
+
+      <!-- Success Message -->
+      <div id="doctor-success" class="success-message">
+        <div class="success-icon">✅</div>
+        <h3>Appointment Request Submitted!</h3>
+        <p>We have received your request. A doctor will call you shortly.</p>
+        <a href="#home" class="back-link">← Return to Home</a>
+      </div>
+    </section>
+
+    <!-- MEDICINE ORDER PAGE -->
+    <section id="medicine">
+      <div class="page-header green">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+        </svg>
+        <div>
+          <h2>Order Medicines</h2>
+          <p>Home delivery for your needs</p>
+        </div>
+      </div>
+      
+      <form class="form-card" action="#medicine-success" method="get">
+        <div class="form-group">
+          <label for="med-name">Medicine Name</label>
+          <input type="text" id="med-name" name="medicine" placeholder="e.g. Paracetamol, Metacin" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <select id="quantity" name="quantity">
+            <option>1 Strip</option>
+            <option>2 Strips</option>
+            <option>3 Strips</option>
+            <option>1 Bottle</option>
+            <option>2 Bottles</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Delivery Address</label>
+          <textarea id="address" name="address" rows="3" placeholder="Enter your full address" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn green">Place Medicine Order</button>
+      </form>
+
+      <!-- Success Message -->
+      <div id="medicine-success" class="success-message">
+        <div class="success-icon">✅</div>
+        <h3>Order Placed Successfully!</h3>
+        <p>Your medicines will be delivered to your home within 24 hours.</p>
+        <a href="#home" class="back-link">← Return to Home</a>
+      </div>
+    </section>
+
+    <!-- HEALTH TIPS PAGE -->
+    <section id="tips">
+      <div class="page-header red">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+        <div>
+          <h2>Health Tips for Seniors</h2>
+          <p>Simple habits for a healthier life</p>
+        </div>
+      </div>
+
+      <ul class="tips-list">
+        <li class="tip-item">
+          <span class="tip-number">1</span>
+          <span>Drink boiled or filtered water regularly to stay hydrated.</span>
+        </li>
+        <li class="tip-item">
+          <span class="tip-number">2</span>
+          <span>Walk for 20-30 minutes every morning or evening.</span>
+        </li>
+        <li class="tip-item">
+          <span class="tip-number">3</span>
+          <span>Check your blood pressure and sugar levels weekly.</span>
+        </li>
+        <li class="tip-item">
+          <span class="tip-number">4</span>
+          <span>Eat fresh fruits and green leafy vegetables daily.</span>
+        </li>
+        <li class="tip-item">
+          <span class="tip-number">5</span>
+          <span>Take your prescribed medicines on time. Never skip a dose.</span>
+        </li>
+        <li class="tip-item">
+          <span class="tip-number">6</span>
+          <span>Get 7-8 hours of good sleep every night.</span>
+        </li>
+        <li class="tip-item">
+          <span class="tip-number">7</span>
+          <span>Do simple yoga or stretching exercises for joint flexibility.</span>
+        </li>
+        <li class="tip-item">
+          <span class="tip-number">8</span>
+          <span>Reduce salt and sugar intake in your meals.</span>
+        </li>
+        <li class="tip-item">
+          <span class="tip-number">9</span>
+          <span>Keep emergency contact numbers saved on your phone.</span>
+        </li>
+        <li class="tip-item">
+          <span class="tip-number">10</span>
+          <span>Stay happy! Talk to your family and friends often.</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- AI HELPER PAGE -->
+    <section id="ai">
+      <div class="page-header purple">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+        <div>
+          <h2>AI Health Helper</h2>
+          <p>Ask me anything about healthcare</p>
+        </div>
+      </div>
+      
+      <div class="chat-container">
+        <div class="form-group">
+          <label for="ai-input">Type your question:</label>
+          <textarea id="ai-input" rows="4" placeholder="Example: How do I book a doctor?"></textarea>
+        </div>
+        
+        <!-- Checkbox Hack for CSS-only interaction -->
+        <input type="checkbox" id="ai-toggle" class="ai-checkbox">
+        <label for="ai-toggle" class="submit-btn purple">Send Message</label>
+        
+        <div class="chat-response">
+          <div class="ai-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+          </div>
+          <div class="ai-message">
+            <strong>AI Helper says:</strong>
+            <p>Namaste! I can help you with that.</p>
+            <p>Please click on <a href="#doctor"><strong>Book Doctor Appointment</strong></a> to find a specialist near you.</p>
+            <p>Or click on <a href="#medicine"><strong>Order Medicine</strong></a> to get medicines delivered to your home.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2024 Senior Healthcare Helpdesk – India</p>
+    <p class="footer-sub">Simple • Secure • Senior-Friendly</p>
+  </footer>
+
+</body>
+</html>
