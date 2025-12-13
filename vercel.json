@@ -3,11 +3,5 @@
   "outputDirectory": "dist",
   "env": {
     "NODE_ENV": "production"
-  },
-  "functions": {
-    "server/index.ts": {
-      "maxDuration": 60,
-      "memory": 1024
-    }
   }
 }
