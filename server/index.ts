@@ -1,15 +1,20 @@
 import express from "express";
 import path from "path";
 import { createServer } from "http";
+import fs from "fs";
 
 const app = express();
 const httpServer = createServer(app);
 
-// Serve static files from client/public
-const publicDir = path.join(process.cwd(), "client", "public");
+// Serve static files from dist/public (production) or client/public (development)
+let publicDir = path.join(process.cwd(), "dist", "public");
+if (!fs.existsSync(publicDir)) {
+  publicDir = path.join(process.cwd(), "client", "public");
+}
+
 app.use(express.static(publicDir));
 
-// Catch-all route to serve index.html for any route
+// Catch-all route to serve index.html for any route (SPA fallback)
 app.get("*", (req, res) => {
   res.sendFile(path.join(publicDir, "index.html"));
 });
