@@ -1,0 +1,8 @@
+.git
+.gitignore
+.vercel
+.local
+attached_assets
+client/public
+node_modules
+.replit
